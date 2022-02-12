@@ -85,6 +85,8 @@
 
 import {request} from 'network/request.js'
 import filtrate from 'views/ResourceLib/DataList/Variety_List/Filtrate'
+import {formatDate} from 'utils/format'
+
 export default {
   data() {
     return {
@@ -125,7 +127,7 @@ export default {
       console.log(res.data);
       this.tableData = res.data
       for (let i of this.tableData) {
-        i.appleAnalysisTime = this.formatDate(i.appleAnalysisTime)
+        i.appleAnalysisTime = formatDate(i.appleAnalysisTime)
       }
     })
 
@@ -134,13 +136,13 @@ export default {
     handleClick(row) {
       this.$router.push('/home/resourcelib/datalist/fruitdetail/' + row.appleId);
     },
-    formatDate(date) {
-      var date = new Date(date);
-      var YY = date.getFullYear() + '-';
-      var MM = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
-      var DD = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate());
-      return YY + MM + DD;
-    }
+    // formatDate(date) {
+    //   var date = new Date(date);
+    //   var YY = date.getFullYear() + '-';
+    //   var MM = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+    //   var DD = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate());
+    //   return YY + MM + DD;
+    // }
   },
   components: {
     filtrate,

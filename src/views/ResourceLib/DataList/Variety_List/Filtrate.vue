@@ -276,6 +276,8 @@ export default {
     font-weight: 200;
   }
   .length {
+    padding-top: 5px;
+    padding-bottom: 5px;
     width: 500px;
   }
 
